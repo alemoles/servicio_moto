@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    cardView:cardCornerRadius="8dp"
+    cardView:cardElevation="8dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+                <TextView
+                    android:id="@+id/motociclista_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center_vertical"
+                    android:lines="1"
+                    android:padding="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    cardView:layout_constraintBottom_toBottomOf="parent"
+                    cardView:layout_constraintRight_toRightOf="parent"
+                    cardView:layout_constraintStart_toStartOf="parent"
+                    cardView:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/motorciclistas_disponible" />
+
+                <TextView
+                    android:id="@+id/motociclista_disponible_count_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center_vertical"
+                    android:lines="1"
+                    android:padding="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    cardView:layout_constraintBottom_toBottomOf="parent"
+                    cardView:layout_constraintRight_toRightOf="parent"
+                    cardView:layout_constraintStart_toEndOf="@+id/motociclista_label"
+                    cardView:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/default_count" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/horario_label"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold"
+                cardView:layout_constraintBottom_toBottomOf="parent"
+                cardView:layout_constraintRight_toRightOf="parent"
+                cardView:layout_constraintStart_toStartOf="parent"
+                cardView:layout_constraintTop_toTopOf="parent"
+                android:text="@string/horario" />
+
+            <TextView
+                android:id="@+id/horario_time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="0dp"
+
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold"
+                cardView:layout_constraintBottom_toBottomOf="parent"
+                cardView:layout_constraintRight_toRightOf="parent"
+                cardView:layout_constraintStart_toStartOf="parent"
+                cardView:layout_constraintTop_toTopOf="parent"
+                android:text="@string/default_horario_time" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.cardview.widget.CardView>

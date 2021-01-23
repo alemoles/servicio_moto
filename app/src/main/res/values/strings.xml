@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Servicio de Motos</string>
+    <string name="motorciclistas_disponible">Motorciclistas Disponibles</string>
+    <string name="horario">Horario</string>
+    <string name="default_count">0</string>
+    <string name="default_horario_time">8:00 AM</string>
 </resources>

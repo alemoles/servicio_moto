@@ -1,0 +1,45 @@
+package com.nostromohq.serviciodemotos.database;
+
+import android.content.Context;
+
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
+
+import com.nostromohq.serviciodemotos.models.User;
+import com.nostromohq.serviciodemotos.repository.AppDao;
+
+import java.util.Random;
+import java.util.concurrent.Executors;
+
+@Database(entities = User.class, exportSchema = false, version = 1)
+public abstract class AppDatabase extends RoomDatabase {
+
+    private static final String DB_NAME = "app_db";
+    private static AppDatabase instance;
+
+    public static synchronized AppDatabase getInstance(Context context) {
+        if (instance == null) {
+            instance = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, DB_NAME)
+                    .fallbackToDestructiveMigration()
+                    .build();
+            instance.populateInitialData();
+        }
+
+        return instance;
+    }
+
+    public abstract AppDao appDao();
+
+    /**
+     * Inserts the user id data into the database if it is currently empty.
+     */
+    private void populateInitialData() {
+        Executors.newSingleThreadExecutor().execute(() -> {
+
+            User user = new User();
+            user.generateId = new Random().nextInt() & Integer.MAX_VALUE;
+            appDao().insertAll(user);
+        });
+    }
+}
